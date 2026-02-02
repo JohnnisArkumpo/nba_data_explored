@@ -1,10 +1,19 @@
 import pandas as pd
 
-#cust = ~/code/nba_data_explored/Test_extractions/customers-100.csv
+cust = '~/code/nba_data_explored/Test_extractions/customers-100.csv'
 
-df = pd.DataFrame('~/code/nba_data_explored/Test_extractions/customers-100.csv')
-# pd.read_csv(cust)
+firstDataSet = {
+    'names': ["Giannis", "Khris", "Jrue", "P.J.", "Brook"],
+    'positions': ["Power Forward", "Shooting Guard", "Point Guard", "Small Forward", "Center"]
+}
 
-# print(df.to_string())
+lName = ["Antetokunmpo", "Middleton", "Holiday", "Tucker", "Lopez"]
 
-print(df.loc[0])
+firstTest = pd.DataFrame(firstDataSet)
+
+secTest = pd.Series(lName,)
+
+csvTest = pd.read_csv(cust)
+
+print(csvTest.info())
+
