@@ -1,5 +1,7 @@
 import pandas as pd
 
+pd.set_option('display.max_rows', None) # An attempt to see all values. Let's see how it goes
+
 cust = '~/code/nba_data_explored/Test_extractions/customers-100.csv'
 
 dat = '~/code/nba_data_explored/Test_extractions/data.csv'
@@ -35,7 +37,11 @@ dcn = dc.dropna()
 
 # SQL for the max pulse query: SELECT maxpulse FROM dc ORDER BY maxpulse DESC
 
-# print(dcn.loc[dcn["Calories"] > 0, "Maxpulse"].sort_values(ascending=False))
+
+
+# print(dcn.loc[dcn["Maxpulse"] < 115, "Maxpulse"].sort_values(ascending=True))
+
+print(dcn.query('(Maxpulse > 140) & (Maxpulse < 150)').sort_values("Calories", ascending=False))
 
 ### Just need to change the amount of results allowed now.
 
