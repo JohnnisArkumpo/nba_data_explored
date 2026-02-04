@@ -21,6 +21,22 @@ newTest = csvTest.dropna
 
 dc = pd.read_csv(dat)
 
+dcn = dc.dropna()
+
 # print(csvTest.info())
 
-print(dc.corr())
+# print(dc.corr())
+
+### Alright so we're gonna work on finding the highest calorie burn in data.csv, but we're going to get the top 
+### three results for each range of max calories. We are going to begin by querying and finding out what
+### the range of max pulse is. 
+
+# SQL code here: SELECT calories FROM dc ORDER BY calories DESC
+
+# SQL for the max pulse query: SELECT maxpulse FROM dc ORDER BY maxpulse DESC
+
+# print(dcn.loc[dcn["Calories"] > 0, "Maxpulse"].sort_values(ascending=False))
+
+### Just need to change the amount of results allowed now.
+
+# print(dc.info())
