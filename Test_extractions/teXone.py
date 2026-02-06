@@ -41,7 +41,11 @@ dcn = dc.dropna()
 
 # print(dcn.loc[dcn["Maxpulse"] < 115, "Maxpulse"].sort_values(ascending=True))
 
-print(dcn.query('(Maxpulse > 140) & (Maxpulse < 150)').sort_values("Calories", ascending=False))
+mxp = dcn.query('(Maxpulse > 140) & (Maxpulse < 150)').sort_values("Calories", ascending=False)
+
+print(mxp["Maxpulse"])
+
+# print()
 
 ### Just need to change the amount of results allowed now.
 
