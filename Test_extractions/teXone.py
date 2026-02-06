@@ -37,16 +37,16 @@ dcn = dc.dropna()
 
 # SQL for the max pulse query: SELECT maxpulse FROM dc ORDER BY maxpulse DESC
 
-
+### I would like to mimic the experiment that I plan to do for my main project here. As a beginning point,
+### I will find seperate groups of max pulse, ideally 5 different groups. I will then find the highest, lowest,
+### and average amount of calories burned for each max pulse group. 
 
 # print(dcn.loc[dcn["Maxpulse"] < 115, "Maxpulse"].sort_values(ascending=True))
 
 mxp = dcn.query('(Maxpulse > 140) & (Maxpulse < 150)').sort_values("Calories", ascending=False)
 
-print(mxp["Maxpulse"])
+print(mxp["Maxpulse"].sort_values(ascending=False))
 
-# print()
 
-### Just need to change the amount of results allowed now.
 
 # print(dc.info())
