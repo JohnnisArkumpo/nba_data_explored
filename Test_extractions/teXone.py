@@ -43,10 +43,49 @@ dcn = dc.dropna()
 
 # print(dcn.loc[dcn["Maxpulse"] < 115, "Maxpulse"].sort_values(ascending=True))
 
-mxp = dcn.query('(Maxpulse > 140) & (Maxpulse < 150)').sort_values("Calories", ascending=False)
+# M>139: 48, 140>M>128: 60, 129>M>118: 49, 119>M: 15. 4 Groups of max pulse that will be used for next step.
 
-print(mxp["Maxpulse"].sort_values(ascending=False))
+mxp1 = dcn.query('(Maxpulse > 139)') #  Highest calories burned for the M>139 group
+mxp2 = dcn.query('(Maxpulse < 140) & (Maxpulse > 128)') # Ditto, between 140-128
+mxp3 = dcn.query('(Maxpulse < 129) & (Maxpulse > 118)') # " " 129-118
+mxp4 = dcn.query('(Maxpulse < 119)') # " " 119-
 
+print("Maximum calories consumed with a max pulse of 140+ ")
+print(mxp1["Calories"].max())
 
+print("Maximum calories consumed with a max pulse of 129-139 ")
+print(mxp2["Calories"].max())
 
-# print(dc.info())
+print("Maximum calories consumed with a max pulse of 119-128 " )
+print(mxp3["Calories"].max())
+
+print("Maximum calories consumed with a max pulse of 118- ")
+print(mxp4["Calories"].max())
+
+# Lowest calories for each group
+
+print("Minimum for group 1")
+print(mxp1["Calories"].min())
+
+print("Minimum for group 2")
+print(mxp2["Calories"].min())
+
+print("Minimum for group 3")
+print(mxp3["Calories"].min())
+
+print("Minimum for group 4")
+print(mxp4["Calories"].min())
+
+# Average calories for each group
+
+print("Average for group 1")
+print(mxp1["Calories"].mean())
+
+print("Average for group 2")
+print(mxp2["Calories"].mean())
+
+print("Average for group 3")
+print(mxp3["Calories"].mean())
+
+print("Average for group 4")
+print(mxp4["Calories"].mean())
