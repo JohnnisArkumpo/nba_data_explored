@@ -6,3 +6,5 @@ df = pd.read_parquet(clns)
 
 # print(df.info())
 
+# print(df["gameDate"].tail(50)) Data set starts 1951-11-11
+

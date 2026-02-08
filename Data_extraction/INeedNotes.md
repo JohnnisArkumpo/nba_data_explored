@@ -25,3 +25,4 @@ I will attempt to find the average for teams each decade as well, to add that to
 clean data up. Remove empty games and create new data set.
 # Step two:
 seperate files into decades? Maybe just query by decade. Find statistical averages for each category over the full league.
+Data set starts in 1951, first decade will be the 50s
