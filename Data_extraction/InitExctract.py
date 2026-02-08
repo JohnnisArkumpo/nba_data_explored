@@ -10,7 +10,7 @@ gp = df.query('numMinutes > 0')
 
 # gotta create a new file
 
-path_to_np = '~/code/nba_data_explored/Data_extraction/PlayerStatsClean.parquet'
+path_to_np = '~/code/nba_data_explored/Data_extraction/playerStatsClean.parquet'
 
 gp.to_parquet(path_to_np, index=False)
 
