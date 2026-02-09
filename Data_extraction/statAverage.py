@@ -14,3 +14,7 @@ st2k2 = '~/code/nba_data_explored/Data_extraction/nbaStats2k20.parquet'
 df = pd.read_parquet(st2k)
 
 print(df.info())
+
+# SELECT AVG(numMinutes, points, assists, blocks, steals, fieldGoalsAttempted, fieldGoalsMade, fieldGoalsPercentage, threePointersAttempted, threePointersMade, threePointersPercentage, freeThrowsPercentage, reboundsDefensive, reboundsOffensive, reboudsTotal, foulsPersonal, turnovers, plusMinusPoints)
+# FROM df
+
