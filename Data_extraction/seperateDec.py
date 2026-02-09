@@ -8,18 +8,20 @@ df = pd.read_parquet(clns)
 
 # print(df["gameDate"].tail(50)) Data set starts 1951-11-11
 
-dcpath = '~/code/nba_data_explored/Data_extraction/nbaStats50s.parquet'
+dcpath = '~/code/nba_data_explored/Data_extraction/nbaStats2k.parquet'
+dcpathtwo = '~/code/nba_data_explored/Data_extraction/nbaStats2k10.parquet'
+dcpaththree = '~/code/nba_data_explored/Data_extraction/nbaStats2k20.parquet'
 
-# gotta filter by date. I'm not sure how to do that as the date is in strings.
+df['gameDate'] = pd.to_datetime(df['gameDate'], format='%Y/%m/%d', errors='coerce')
 
-# df['gameDate'] = pd.to_datetime(df['gameDate'])
+# print(df['gameDate'].dtype)
 
-pd.to_datetime(df['gameDate'], errors='coerce', format='%Y/%m/%d', yearFirst=True)
+decade = df[(df['gameDate'] >= '2000-01-01') & (df['gameDate'] < '2010-01-01')]
+decade2 = df[(df['gameDate'] >= '2010-01-01') & (df['gameDate'] < '2020-01-01')]
+decade3 = df[df['gameDate'] >= '2020-01-01']
 
-# print(df.info)
-
-decade = df.query('gameDate')
-
-# decade.to_parquet(dcpath, index=False)
+decade.to_parquet(dcpath, index=False)
+decade2.to_parquet(dcpathtwo, index=False)
+decade3.to_parquet(dcpaththree, index=False)
 
 # gameDate is before 1960-01-01 for the first query. Between required dates for each next one.
