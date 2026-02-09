@@ -7,7 +7,7 @@ I'm not sure if .query() works with strings or just with numbers, this may be my
 
 [ ] I need to query enough just to understand the values in each column. 
 
-[ ] Once I have this done, my first step will be to write code to seperate by decade. 
+[x] Once I have this done, my first step will be to write code to seperate by decade. 
 
 [ ] Then write code to find the average of all statistical categories for the entire NBA that decade
 
@@ -26,3 +26,5 @@ clean data up. Remove empty games and create new data set.
 # Step two:
 seperate files into decades? Maybe just query by decade. Find statistical averages for each category over the full league.
 Data set starts in 1951, first decade will be the 50s
+# Step three:
+Write code to find the statistical averages in each category
