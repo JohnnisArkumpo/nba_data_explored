@@ -12,10 +12,14 @@ dcpath = '~/code/nba_data_explored/Data_extraction/nbaStats50s.parquet'
 
 # gotta filter by date. I'm not sure how to do that as the date is in strings.
 
-df['gameDate'] = pd.to_datetime(df['gameDate'])
+# df['gameDate'] = pd.to_datetime(df['gameDate'])
 
-decade = df.query('gameDate < 1960-01-01')
+pd.to_datetime(df['gameDate'], errors='coerce', format='%Y/%m/%d', yearFirst=True)
 
-decade.to_parquet(dcpath, index=False)
+# print(df.info)
+
+decade = df.query('gameDate')
+
+# decade.to_parquet(dcpath, index=False)
 
 # gameDate is before 1960-01-01 for the first query. Between required dates for each next one.
