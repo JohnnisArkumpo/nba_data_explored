@@ -48,3 +48,10 @@ rbt = 5
 # debug timeee
 # print(df['points'].isna().sum()) # 0? What the frick bro
 # print(df['points'].head(2))
+
+
+
+
+
+
+# All the files where completely empty. I gotta figure out how to do this all over again.

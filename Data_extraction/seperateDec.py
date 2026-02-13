@@ -9,20 +9,19 @@ df = pd.read_parquet(clns)
 # print(df["gameDate"].tail(50)) Data set starts 1951-11-11
 
 dcpath = '~/code/nba_data_explored/Data_extraction/nbaStats2k.parquet'
-dcpathtwo = '~/code/nba_data_explored/Data_extraction/nbaStats2k10.parquet'
-dcpaththree = '~/code/nba_data_explored/Data_extraction/nbaStats2k20.parquet'
 
-df['gameDate'] = pd.to_datetime(df['gameDate'], format='%Y/%m/%d', errors='coerce')
+df['gameDate'] = pd.to_datetime(df['gameDate'], utc=True, errors='coerce').dt.tz_localize(None)
+# This here is the problem. Somehow instead of actually turning the data to datetime, it erases it.
 
 # print(df['gameDate'].dtype)
 
-decade = df[(df['gameDate'] >= '2000-01-01') & (df['gameDate'] < '2010-01-01')]
-decade2 = df[(df['gameDate'] >= '2010-01-01') & (df['gameDate'] < '2020-01-01')]
-decade3 = df[df['gameDate'] >= '2020-01-01']
+# decade = df[(df['gameDate'] < '1960-01-01')]
 
-decade.to_parquet(dcpath, index=False)
-decade2.to_parquet(dcpathtwo, index=False)
-decade3.to_parquet(dcpaththree, index=False)
+print(df.info())
+
+# print(decade.head(2))
+
+# decade.to_parquet(dcpath, index=False)
 
 # gameDate is before 1960-01-01 for the first query. Between required dates for each next one.
 
