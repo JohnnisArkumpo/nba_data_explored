@@ -12,7 +12,7 @@ st2k2 = '~/code/nba_data_explored/Data_extraction/nbaStats2k20.parquet'
 
 # Take a single parquet file and find the statistical averages across the full file
 
-df = pd.read_parquet(clns)
+df = pd.read_parquet(st2k2)
 
 print(df.info())
 
