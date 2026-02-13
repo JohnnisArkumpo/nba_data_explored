@@ -4,20 +4,39 @@ clns = '~/code/nba_data_explored/Data_extraction/playerStatsClean.parquet'
 
 df = pd.read_parquet(clns)
 
-# print(df.info())
+
+
+
+print(f"Total rows in dataframe: {len(df)}")
+print(f"Non-null gameDate values BEFORE conversion: {df['gameDate'].notna().sum()}")
+print(f"Null gameDate values BEFORE conversion: {df['gameDate'].isna().sum()}")
+
+# Show a sample of the actual date values
+print("\nSample of gameDate values BEFORE conversion:")
+print(df['gameDate'].head(20))
+print(df['gameDate'].dtype)
+
+df['gameDate'] = pd.to_datetime(df['gameDate'], utc=True, errors='coerce').dt.tz_localize(None)
+
+print(f"\nNon-null gameDate values AFTER conversion: {df['gameDate'].notna().sum()}")
+print(f"Null gameDate values AFTER conversion: {df['gameDate'].isna().sum()}")
+print("\nSample of gameDate values AFTER conversion:")
+print(df['gameDate'].head(20))
+
+
+
 
 # print(df["gameDate"].tail(50)) Data set starts 1951-11-11
 
-dcpath = '~/code/nba_data_explored/Data_extraction/nbaStats2k.parquet'
+# dcpath = '~/code/nba_data_explored/Data_extraction/nbaStats2k.parquet'
 
-df['gameDate'] = pd.to_datetime(df['gameDate'], utc=True, errors='coerce').dt.tz_localize(None)
-# This here is the problem. Somehow instead of actually turning the data to datetime, it erases it.
+# df['gameDate'] = pd.to_datetime(df['gameDate'], utc=True, errors='coerce').dt.tz_localize(None)
 
 # print(df['gameDate'].dtype)
 
 # decade = df[(df['gameDate'] < '1960-01-01')]
 
-print(df.info())
+# print(df.info())
 
 # print(decade.head(2))
 
