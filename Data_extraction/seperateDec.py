@@ -25,3 +25,5 @@ decade2.to_parquet(dcpathtwo, index=False)
 decade3.to_parquet(dcpaththree, index=False)
 
 # gameDate is before 1960-01-01 for the first query. Between required dates for each next one.
+
+# somehow all of these files are empty? Tf did I do??
