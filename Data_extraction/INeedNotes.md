@@ -28,3 +28,24 @@ seperate files into decades? Maybe just query by decade. Find statistical averag
 Data set starts in 1951, first decade will be the 50s
 # Step three:
 Write code to find the statistical averages in each category
+
+
+
+
+Need to save this miracle because it saved me in the troubleshooting.
+
+print(f"Total rows in dataframe: {len(df)}")
+print(f"Non-null gameDate values BEFORE conversion: {df['gameDate'].notna().sum()}")
+print(f"Null gameDate values BEFORE conversion: {df['gameDate'].isna().sum()}")
+
+<!-- Show a sample of the actual date values -->
+print("\nSample of gameDate values BEFORE conversion:")
+print(df['gameDate'].head(20))
+print(df['gameDate'].dtype)
+
+df['gameDate'] = pd.to_datetime(df['gameDate'], format='ISO8601', utc=True, errors='coerce').dt.tz_localize(None)
+
+print(f"\nNon-null gameDate values AFTER conversion: {df['gameDate'].notna().sum()}")
+print(f"Null gameDate values AFTER conversion: {df['gameDate'].isna().sum()}")
+print("\nSample of gameDate values AFTER conversion:")
+print(df['gameDate'].head(20))
