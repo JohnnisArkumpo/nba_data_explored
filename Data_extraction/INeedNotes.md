@@ -5,6 +5,12 @@ I also currently have very good reason to believe that my computer will struggle
 I'm not sure if .query() works with strings or just with numbers, this may be my problem.
 .query() does in fact work with strings, but you need to use an extra set of quotes
 
+Really weird observation, to test the parquet files for each decade I just queried the basic three stats of points, rebounds, and assists. This stat increased from the 50s to the 60s, then decreased throughout the 70s, 80s, 90s, and 2000. It stabilized again in 2010, then so far throughout 2020 it has had a small increase again.
+This is probably due to the increase in teams throughout the 70s, 80s, and 90s, creating a higher amount of lower skill players in the league, as well as more unproven prospects getting minutes. Since there have not been new teams for a while, the league is stabilizing and getting better. 
+With talks of two expansion teams entering the league, it is reasonable to expect the averages to go down again throughout the second half of the 2020s, or early in the 2030s.
+
+
+###########      TODO      ############
 [ ] I need to query enough just to understand the values in each column. 
 
 [x] Once I have this done, my first step will be to write code to seperate by decade. 
@@ -14,6 +20,7 @@ I'm not sure if .query() works with strings or just with numbers, this may be my
 [x] I will also find a way in this ^ code to eliminate non-played games, probably by not including games with 0 minutes registered
 
 [ ] Then I will write code to isolate each player, using personId, and find their averages
+###########      TODO      ############
 
 I will then write code that isolate the top 5 overall and top 3 players statistically at each position possibly finding the leaders in each statistical category as well. 
 ^This is the primary objective. I can then find other ways to query the database and create good arguments as to who is better.

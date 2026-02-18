@@ -1,27 +1,27 @@
 import pandas as pd
 
 clns = '~/code/nba_data_explored/Data_extraction/playerStatsClean.parquet'
-st50 = '~/code/nba_data_explored/Data_extraction/nbaStats50s.parquet'
-st60 = '~/code/nba_data_explored/Data_extraction/nbaStats60s.parquet'
-st70 = '~/code/nba_data_explored/Data_extraction/nbaStats70s.parquet'
-st80 = '~/code/nba_data_explored/Data_extraction/nbaStats80s.parquet'
-st90 = '~/code/nba_data_explored/Data_extraction/nbaStats90s.parquet'
+st50 = '~/code/nba_data_explored/Data_extraction/nbaStats50.parquet'
+st60 = '~/code/nba_data_explored/Data_extraction/nbaStats60.parquet'
+st70 = '~/code/nba_data_explored/Data_extraction/nbaStats70.parquet'
+st80 = '~/code/nba_data_explored/Data_extraction/nbaStats80.parquet'
+st90 = '~/code/nba_data_explored/Data_extraction/nbaStats90.parquet'
 st2k = '~/code/nba_data_explored/Data_extraction/nbaStats2k.parquet'
-st2k1 = '~/code/nba_data_explored/Data_extraction/nbaStats2k10.parquet'
-st2k2 = '~/code/nba_data_explored/Data_extraction/nbaStats2k20.parquet'
+st2k10 = '~/code/nba_data_explored/Data_extraction/nbaStats2k10.parquet'
+st2k20 = '~/code/nba_data_explored/Data_extraction/nbaStats2k20.parquet'
 
 # Take a single parquet file and find the statistical averages across the full file
 
-df = pd.read_parquet(st2k2)
+df = pd.read_parquet(st2k20)
 
-print(df.info())
+# print(df.info())
 
 # SELECT AVG(numMinutes, points, assists, blocks, steals, fieldGoalsAttempted, fieldGoalsMade, fieldGoalsPercentage, threePointersAttempted, threePointersMade, threePointersPercentage, freeThrowsPercentage, reboundsDefensive, reboundsOffensive, reboudsTotal, foulsPersonal, turnovers, plusMinusPoints)
 # FROM df
 
 # min = df.mean(df["numMinutes"])
-# pnt = df["points"].mean()
-# ast = df.mean(df["assists"])
+pnt = df["points"].mean()
+ast = df["assists"].mean()
 # blk = df.mean("blocks")
 # stl = df.mean("steals")
 # fga = df.mean("fieldGoalsAttempted")
@@ -35,15 +35,12 @@ print(df.info())
 # ftp = df.mean("freethrowsPercentage")
 # rbd = df.mean("reboundsDefensive")
 # rbo = df.mean("reboundsOffensive")
-# rbt = df.mean(df["reboundsTotal"])
+rbt = df["reboundsTotal"].mean()
 # flp = df.mean("foulsPersonal")
 # trn = df.mean("turnovers")
 # pmp = df.mean("plusMinusPoints")
-# pnt = 1
-ast = 2
-rbt = 5
 
-# print(f"In the 2000s players averaged {pnt} points, {ast} assists, and {rbt} rebounds.")
+print(f"In the 2020s players averaged {round(pnt, 1)} points, {round(ast, 1)} assists, and {round(rbt, 1)} rebounds.")
 
 # debug timeee
 # print(df['points'].isna().sum()) # 0? What the frick bro
