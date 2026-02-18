@@ -45,10 +45,3 @@ print(f"In the 2020s players averaged {round(pnt, 1)} points, {round(ast, 1)} as
 # debug timeee
 # print(df['points'].isna().sum()) # 0? What the frick bro
 # print(df['points'].head(2))
-
-
-
-
-
-
-# All the files where completely empty. I gotta figure out how to do this all over again.
