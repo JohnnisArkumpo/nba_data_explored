@@ -10,16 +10,25 @@ st2k = '~/code/nba_data_explored/Data_extraction/nbaStats2k.parquet'
 st2k10 = '~/code/nba_data_explored/Data_extraction/nbaStats2k10.parquet'
 st2k20 = '~/code/nba_data_explored/Data_extraction/nbaStats2k20.parquet'
 
-# Take a single parquet file and find the statistical averages across the full file
+dec = "" # decade for string
+
+
+# Function. This should be one that allows me to find the averages of any given decade.
+
+def averages():
+    print(f"")
+
 
 df = pd.read_parquet(st2k20)
 
-# print(df.info())
+print(df.info())
 
-# SELECT AVG(numMinutes, points, assists, blocks, steals, fieldGoalsAttempted, fieldGoalsMade, fieldGoalsPercentage, threePointersAttempted, threePointersMade, threePointersPercentage, freeThrowsPercentage, reboundsDefensive, reboundsOffensive, reboudsTotal, foulsPersonal, turnovers, plusMinusPoints)
-# FROM df
 
-# min = df.mean(df["numMinutes"])
+# There should be a simpler way to do this, maybe using a dictionary filled out with all the statistical categories? Then they can be used to query.
+# Basically the user would see "statistical categories are: 1. 2. etc"
+# "Type the number for each statistical category you would like to include, then type 0 when you are finished"
+# Then the program would loop and place the statistical categories in y=df[x].mean() or whatever function needed as many times as there were categories chosen.
+min = df["numMinutes"].mean()
 pnt = df["points"].mean()
 ast = df["assists"].mean()
 # blk = df.mean("blocks")
@@ -40,7 +49,7 @@ rbt = df["reboundsTotal"].mean()
 # trn = df.mean("turnovers")
 # pmp = df.mean("plusMinusPoints")
 
-print(f"In the 2020s players averaged {round(pnt, 1)} points, {round(ast, 1)} assists, and {round(rbt, 1)} rebounds.")
+# print(f"In the 2020s players averaged {round(pnt, 1)} points, {round(ast, 1)} assists, and {round(rbt, 1)} rebounds.")
 
 # debug timeee
 # print(df['points'].isna().sum()) # 0? What the frick bro

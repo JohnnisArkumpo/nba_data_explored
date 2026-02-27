@@ -11,7 +11,7 @@ With talks of two expansion teams entering the league, it is reasonable to expec
 
 
 ###########      TODO      ############
-[ ] I need to query enough just to understand the values in each column. 
+[x] I need to query enough just to understand the values in each column. 
 
 [x] Once I have this done, my first step will be to write code to seperate by decade. 
 
@@ -20,6 +20,8 @@ With talks of two expansion teams entering the league, it is reasonable to expec
 [x] I will also find a way in this ^ code to eliminate non-played games, probably by not including games with 0 minutes registered
 
 [ ] Then I will write code to isolate each player, using personId, and find their averages
+
+[ ] I need to also write a function that will allow for the user to choose what to do and compare different decades and averages at will
 ###########      TODO      ############
 
 I will then write code that isolate the top 5 overall and top 3 players statistically at each position possibly finding the leaders in each statistical category as well. 
