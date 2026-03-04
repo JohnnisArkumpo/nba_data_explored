@@ -9,13 +9,14 @@ Really weird observation, to test the parquet files for each decade I just queri
 This is probably due to the increase in teams throughout the 70s, 80s, and 90s, creating a higher amount of lower skill players in the league, as well as more unproven prospects getting minutes. Since there have not been new teams for a while, the league is stabilizing and getting better. 
 With talks of two expansion teams entering the league, it is reasonable to expect the averages to go down again throughout the second half of the 2020s, or early in the 2030s.
 
+I'm going  to be making a function that will handle querying the individual decades of ball. This will accept basic inputs, I will also be makking the equivilant of a case:switch for the different changes in each decade depending on user input of what decade is desired.
 
 ###########      TODO      ############
 [x] I need to query enough just to understand the values in each column. 
 
 [x] Once I have this done, my first step will be to write code to seperate by decade. 
 
-[ ] Then write code to find the average of all statistical categories for the entire NBA that decade
+[x] Then write code to find the average of all statistical categories for the entire NBA that decade
 
 [x] I will also find a way in this ^ code to eliminate non-played games, probably by not including games with 0 minutes registered
 
